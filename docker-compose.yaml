@@ -1,0 +1,20 @@
+services:
+  mssqltest:
+    build:
+      context: ./mssql
+      dockerfile: Dockerfile
+    ports:
+      - '1433:1433'
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Strongp@55w0rd
+  backend:
+    build:
+      context: ./demo
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    environment:
+      - SQLSERVER=mssqltest
+    depends_on:
+      - mssqltest
