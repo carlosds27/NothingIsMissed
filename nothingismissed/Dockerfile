@@ -12,4 +12,4 @@ EXPOSE 8080
 
 ENV sqlserver localhost
 
-CMD ["./mvnw", "spring-boot:run"]
+CMD ["./mvnw", "-e", "spring-boot:run"]

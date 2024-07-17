@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.cornbread.nothingismissed;
 
 class ItemNotFoundException extends RuntimeException {
 
@@ -7,3 +7,4 @@ class ItemNotFoundException extends RuntimeException {
     }
 
 }
+

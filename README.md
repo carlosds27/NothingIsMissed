@@ -1,5 +1,5 @@
 # NothingIsMissed
-This is a Demo Spring Boot Application that utilizes Spring JPA Data to connect to a MSSQL Database.
+This is a simple Business bookeeping order backend that utilizes Spring JPA Data to connect to a MSSQL Database.
 
 ## How to Run the Project
 1. Change the database password on the `docker-compose.yaml` file as needed.
@@ -12,13 +12,11 @@ This is a Demo Spring Boot Application that utilizes Spring JPA Data to connect 
 > Connect to the SQL Server through `localhost` port 1433
 
 ### API Endpoints
-- `GET /items`: To get all the Product
-- `POST /item`: To save a new Product to the database (fields: productName, price, amount)
-- `GET /item/{id}`: To get a specific Product by id
-- `PUT /item/{id}`: To update a specific Product by id
-- `DELETE /item/{id}`: To delete a specific Product by id
+Check the updated API Points using Postman
+https://documenter.getpostman.com/view/26309396/2sA3kRK4MM
 
 ## TODO:
+- [x] Implement other classes and link them together
 - [ ] Put all secrets into a seperate environment file
 - [ ] Handle incorrect JSON POST request
 - [ ] Implement User/Admin Class that can access certain endpoints (Sessions)

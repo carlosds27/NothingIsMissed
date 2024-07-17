@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.cornbread.nothingismissed;
 
 import java.util.List;
 
@@ -15,45 +15,35 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 class ItemController { 
     @Autowired
-    private final ItemRepository itemRepo = null;
+    private final ItemService itemServ = null;
 
     // Get all the items in the database
     @GetMapping("/items")
-    List<Item> allItems() {
-        return itemRepo.findAll();
+    public List<Item> allItems() {
+        return itemServ.allItems();
     }
 
     // Save new item to the database
     @PostMapping("/item")
-    Item newItem(@RequestBody Item newItem) {
-        return itemRepo.save(newItem);
+    public Item newItem(@RequestBody Item newItem) {
+        return itemServ.saveItem(newItem);
     }
     
     // Get one item in the database
     @GetMapping("/item/{id}")
-    Item getItem(@PathVariable Long id) {
-        return itemRepo.findById(id)
-            .orElseThrow(() -> new ItemNotFoundException(id));
+    public Item getItem(@PathVariable Long id) {
+        return itemServ.getItemById(id);
     }
     
     // Update one single item in the database
     @PutMapping("/item/{id}")
-    Item updateItem(@PathVariable Long id, @RequestBody Item newItem) {
-        return itemRepo.findById(id)
-            .map(item -> {
-                item.setProductName(newItem.getProductName());
-                item.setPrice(newItem.getPrice());
-                item.setAmount(newItem.getAmount());
-                return itemRepo.save(item);
-            })
-            .orElseGet(() -> {
-                return itemRepo.save(newItem);
-            });
+    public Item updateItem(@PathVariable Long id, @RequestBody Item newItem) {
+        return itemServ.updateItem(id, newItem);
     }
 
     // Delete one item
     @DeleteMapping("/item/{id}")
-    void deleteItem(@PathVariable Long id) {
-        itemRepo.deleteById(id);
+    public void deleteItem(@PathVariable Long id) {
+        itemServ.deleteItemById(id);
     }
 }

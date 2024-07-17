@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.cornbread.nothingismissed;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -14,3 +14,4 @@ class ItemNotFoundAdvice {
         return ex.getMessage();
     }
 }
+
