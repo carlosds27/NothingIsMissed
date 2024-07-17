@@ -12,7 +12,7 @@ This is a simple Business bookeeping order backend that utilizes Spring JPA Data
 > Connect to the SQL Server through `localhost` port 1433
 
 ### API Endpoints
-Check the updated API Points using Postman
+Check the updated API endpoints using Postman
 https://documenter.getpostman.com/view/26309396/2sA3kRK4MM
 
 ## TODO:
